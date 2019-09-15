@@ -9,7 +9,11 @@ class _DirectoryState extends State<Directory> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Text('Exhibitors'),
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        title: Text('Directory'),
+      ),
+      body: Text('Directory'),
     );
   }
 }

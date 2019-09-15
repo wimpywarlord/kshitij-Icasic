@@ -8,6 +8,12 @@ class Faq extends StatefulWidget {
 class _FaqState extends State<Faq> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Text('THIS IS THE FAQ PAGE'),)
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        title: Text('FAQ'),
+      ),
+      body: Text('THIS IS THE FAQ PAGE'),
+    );
   }
 }

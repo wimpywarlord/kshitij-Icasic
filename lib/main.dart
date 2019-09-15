@@ -82,7 +82,7 @@ class _MyAppState extends State<MyApp> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Text(
-                          'icasic',
+                          'iCASIC2020',
                           style: TextStyle(
                             fontFamily: 'anton',
                             fontSize: 40.0,
