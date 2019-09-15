@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:icasic19/partners.dart';
+import 'package:icasic19/sessions.dart';
+import 'package:icasic19/speaker.dart';
 
 class HomePage extends StatefulWidget {
-
   String username;
   HomePage(this.username);
   @override
@@ -9,40 +12,53 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-    int _selectedIndex = 0;
-   void _onItemTapped(int index) {
+  int _selectedIndex = 0;
+  void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
     });
   }
- 
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Icasic'),
+          title: const Text('icasic'),
           backgroundColor: Colors.black,
         ),
-        body: Container(),
-        bottomNavigationBar: BottomNavigationBar(
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              title: Text('Sessions'),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.mic),
-              title: Text('Speakers'),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.school),
-              title: Text('Partners'),
-            ),
-          ],
-          currentIndex: _selectedIndex,
-          selectedItemColor: Colors.black38,
-          onTap: _onItemTapped,
+        body: CupertinoTabScaffold(
+          tabBar: CupertinoTabBar(
+            items: const <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                icon: Icon(Icons.home),
+                title: Text('Sessions'),
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.mic),
+                title: Text('Speakers'),
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.school),
+                title: Text('Partners'),
+              ),
+            ],
+          ),
+          tabBuilder: (BuildContext context, int index) {
+            assert(index >= 0 && index <= 2);
+            switch (index) {
+              case 0:
+                return new Sessions();
+                break;
+              case 1:
+                return new Speaker();
+                break;
+              case 2:
+                return new Partners();
+                break;
+            }
+            return null;
+          },
         ),
         drawer: Drawer(
           child: Column(
