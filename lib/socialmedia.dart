@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:icasic19/social_icons.dart';
 
 class SocialMedia extends StatefulWidget {
   @override
@@ -13,7 +14,7 @@ class _SocialMediaState extends State<SocialMedia> {
         backgroundColor: Colors.black,
         title: Text('Social Media'),
       ),
-      body: Text('THIS IS THE SOCIAL MEDIA PAGE'),
+      body: Icon(Social.facebook),
     );
   }
 }
