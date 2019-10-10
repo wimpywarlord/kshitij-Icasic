@@ -7,6 +7,7 @@ import 'package:icasic19/partners.dart';
 import 'package:icasic19/sessions.dart';
 import 'package:icasic19/socialmedia.dart';
 import 'package:icasic19/speaker.dart';
+import 'package:icasic19/profile.dart';
 
 class HomePage extends StatefulWidget {
   String username;
@@ -30,6 +31,19 @@ class _HomePageState extends State<HomePage> {
         builder: (context3) => Scaffold(
               appBar: AppBar(
                 title: const Text('iCASIC2020'),
+                 actions: <Widget>[
+          new IconButton(icon: new Icon(Icons.nature_people),
+              onPressed: (){
+
+                  Navigator.push(
+                            context3,
+                            MaterialPageRoute(
+                                builder: (context3) => Profile()));
+
+              },
+              ),
+        ],
+   
                 backgroundColor: Colors.black,
               ),
               body: CupertinoTabScaffold(
