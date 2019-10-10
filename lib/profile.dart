@@ -11,6 +11,7 @@ class _ProfileState extends State<Profile> {
 
 
 return new Scaffold(
+  
         body: new Stack(
       children: <Widget>[
         ClipPath(
@@ -80,9 +81,19 @@ return new Scaffold(
                       ),
                     ))
               ],
-            ))
+            )),
+
+            Positioned(
+            child: AppBar(
+              title: Text("Transparent AppBar"),
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+             
+            ),
+          )
       ],
-    ));
+    )
+    );
   }
 }
 
