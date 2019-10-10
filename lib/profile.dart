@@ -85,7 +85,7 @@ return new Scaffold(
 
             Positioned(
             child: AppBar(
-              title: Text("Transparent AppBar"),
+              
               backgroundColor: Colors.transparent,
               elevation: 0,
              
